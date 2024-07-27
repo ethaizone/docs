@@ -1,5 +1,7 @@
 # Common practices for AI usage
 
+This guide was created for startup companies that don't have a budget to spend on corporate accounts yet.
+
 **Tables of Contents**
 
 - [Common practices for AI usage](#common-practices-for-ai-usage)
@@ -43,9 +45,9 @@ Guidelines for Using on specific GPTs.
 
 - Please opt-out for telemetry data. Go to Settings page then remove checkbox from "Disable code snippet telemetry". [Codeium - Free AI Code Completion & Chat](https://codeium.com/settings)
 
-- They declared in here that actually they don't use input or output data from any users even individual account. [How is Codeium Free?](https://codeium.com/blog/how-is-codeium-free)
+  - They declared in here that actually they don't use input or output data from any users even individual account. [How is Codeium Free?](https://codeium.com/blog/how-is-codeium-free)
 
-- They declared that only data that they gathered is telemetry data such as latency, engagement with features, and suggestion acceptance information that you can opt-out by above setting. [Security and Privacy | Codeium - Free AI Code Completion & Chat](https://codeium.com/security)
+  - They declared that only data that they gathered is telemetry data such as latency, engagement with features, and suggestion acceptance information that you can opt-out by above setting. [Security and Privacy | Codeium - Free AI Code Completion & Chat](https://codeium.com/security)
 
 Guidelines for Using GPT in Working Tasks
 -----------------------------------------
