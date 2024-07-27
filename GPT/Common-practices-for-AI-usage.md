@@ -30,8 +30,7 @@ Guidelines for Using on specific GPTs.
 ### Github Copilot
 
 - Please opt-out for allow Github to use data for improve their products.
-
-- [Managing Copilot policies as an individual subscriber - GitHub Docs](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-copilot-policies-as-an-individual-subscriber#enabling-or-disabling-prompt-and-suggestion-collection)
+  - [Managing Copilot policies as an individual subscriber - GitHub Docs](https://docs.github.com/en/copilot/managing-copilot/managing-copilot-as-an-individual-subscriber/managing-copilot-policies-as-an-individual-subscriber#enabling-or-disabling-prompt-and-suggestion-collection)
 
 ### Gemini
 
@@ -44,9 +43,7 @@ Guidelines for Using on specific GPTs.
 ### Codeium
 
 - Please opt-out for telemetry data. Go to Settings page then remove checkbox from "Disable code snippet telemetry". [Codeium - Free AI Code Completion & Chat](https://codeium.com/settings)
-
   - They declared in here that actually they don't use input or output data from any users even individual account. [How is Codeium Free?](https://codeium.com/blog/how-is-codeium-free)
-
   - They declared that only data that they gathered is telemetry data such as latency, engagement with features, and suggestion acceptance information that you can opt-out by above setting. [Security and Privacy | Codeium - Free AI Code Completion & Chat](https://codeium.com/security)
 
 Guidelines for Using GPT in Working Tasks
