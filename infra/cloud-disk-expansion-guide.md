@@ -23,8 +23,10 @@ Here you can see the total disk size is 100 GiB
 ```bash
 gdisk -l /dev/sda
 ```
+
 Example output:
-```
+
+```text
 GPT fdisk (gdisk) version 1.0.5
 Partition table scan:
   MBR: protective
@@ -45,6 +47,7 @@ Total free space is 2014 sectors (1007.0 KiB)
 Number  Start (sector)    End (sector)  Size       Code  Name
    1            2048       167772126   80.0 GiB    8300  Linux filesystem
 ```
+
 In this example, you can see:
 - Total disk size: 100 GiB (from fdisk)
 - Current partition size: 80 GiB (from gdisk)
