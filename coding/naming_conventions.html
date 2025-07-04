@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: A Guide to Naming Conventions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-arrow {
+            color: #FFC700;
+            font-weight: bold;
+            font-size: 2rem;
+        }
+        .kpi-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 244, 232, 0.1), 0 4px 6px -2px rgba(0, 244, 232, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center my-8 md:my-16">
+            <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-wider">The Art of the Name</h1>
+            <p class="mt-4 text-lg md:text-xl text-cyan-300 max-w-3xl mx-auto">A visual guide to writing clean, consistent, and maintainable code across your entire stack.</p>
+        </header>
+        
+        <main>
+            <section id="philosophy" class="my-16 md:my-24">
+                <div class="text-center max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-white mb-4">Why Naming Matters</h2>
+                    <p class="text-lg text-gray-400">The primary goal of any naming convention is to maximize clarity and minimize cognitive load. We write code for humans first, machines second. This guide establishes a unified standard to ensure our code is predictable, readable, and less prone to bugs.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-cyan-300 mb-2">Clarity Over Brevity</h3>
+                        <p class="text-gray-400">A long, descriptive name like `calculateTotalAmount` is always superior to a short, cryptic one like `calcTtl`. Your goal is to eliminate ambiguity.</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <h3 class="xl font-bold text-cyan-300 mb-2">Consistency is King</h3>
+                        <p class="text-gray-400">A reasonable, consistently applied convention is far better than a "perfect" but sporadically used one. Uniformity creates predictability.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="casing" class="my-16 md:my-24">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">The Programmer's Toolkit: Casing Conventions</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-cyan-300">camelCase</h3>
+                        <p class="font-mono text-lg my-4 bg-gray-700 p-2 rounded">variableName</p>
+                        <p class="text-gray-400">For variables, functions, and properties in JS/TS/PHP.</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-green-300">PascalCase</h3>
+                        <p class="font-mono text-lg my-4 bg-gray-700 p-2 rounded">TypeName</p>
+                        <p class="text-gray-400">For classes, interfaces, enums, and React components.</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-yellow-300">snake_case</h3>
+                        <p class="font-mono text-lg my-4 bg-gray-700 p-2 rounded">variable_name</p>
+                        <p class="text-gray-400">Standard for file names in Go. Common in other languages like Python.</p>
+                    </div>
+                    <div class="kpi-card p-6 rounded-lg text-center">
+                        <h3 class="text-2xl font-bold text-pink-400">CONSTANT_CASE</h3>
+                        <p class="font-mono text-lg my-4 bg-gray-700 p-2 rounded">MAX_VALUE</p>
+                        <p class="text-gray-400">The universal standard for constant values in TS/PHP.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="booleans" class="my-16 md:my-24">
+                <h2 class="text-3xl font-bold text-white text-center mb-12">Universal Truths: Naming Booleans</h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-12">To make boolean values instantly recognizable and their purpose clear, we use specific prefixes. This convention applies globally across Go, PHP, and TypeScript.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <div class="w-32 h-32 mb-4"><canvas id="isChart"></canvas></div>
+                        <h3 class="text-xl font-bold text-cyan-300">is...</h3>
+                        <p class="text-gray-400 mt-2">Describes a current state or quality. Answers: "What is it right now?"</p>
+                        <p class="font-mono mt-2 text-sm bg-gray-700 p-2 rounded">isLoading, isVisible</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <div class="w-32 h-32 mb-4"><canvas id="hasChart"></canvas></div>
+                        <h3 class="text-xl font-bold text-green-300">has...</h3>
+                        <p class="text-gray-400 mt-2">Indicates possession of a property. Answers: "Does it contain...?"</p>
+                        <p class="font-mono mt-2 text-sm bg-gray-700 p-2 rounded">hasError, hasChildren</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <div class="w-32 h-32 mb-4"><canvas id="shouldChart"></canvas></div>
+                        <h3 class="text-xl font-bold text-yellow-300">should...</h3>
+                        <p class="text-gray-400 mt-2">Indicates a future or conditional action. Answers: "What is supposed to happen?"</p>
+                        <p class="font-mono mt-2 text-sm bg-gray-700 p-2 rounded">shouldUpdate, shouldRetry</p>
+                    </div>
+                     <div class="bg-gray-800 p-6 rounded-xl shadow-lg flex flex-col items-center text-center">
+                        <div class="w-32 h-32 mb-4"><canvas id="canChart"></canvas></div>
+                        <h3 class="text-xl font-bold text-pink-400">can...</h3>
+                        <p class="text-gray-400 mt-2">Indicates an ability or permission. Answers: "Is it possible to...?"</p>
+                        <p class="font-mono mt-2 text-sm bg-gray-700 p-2 rounded">canEdit, canDelete</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="languages" class="my-16 md:my-24">
+                 <h2 class="text-3xl font-bold text-white text-center mb-4">A Language Showdown</h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-12">While global patterns provide a foundation, we must respect the idiomatic conventions of each language. Here's a high-level comparison.</p>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-bold text-white text-center mb-4">Philosophical Comparison</h3>
+                        <div class="chart-container mx-auto h-80 md:h-96"><canvas id="languageRadarChart"></canvas></div>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-white mb-4">Key Takeaways</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start"><span class="text-cyan-300 font-bold mr-2">Go:</span> <span class="text-gray-400">Prioritizes simplicity and package visibility through casing. Brevity is encouraged in small scopes.</span></li>
+                            <li class="flex items-start"><span class="text-green-300 font-bold mr-2">PHP:</span> <span class="text-gray-400">Relies on the strict, community-driven PSR standards for interoperability and professionalism. Naming is verbose and explicit.</span></li>
+                            <li class="flex items-start"><span class="text-yellow-300 font-bold mr-2">TypeScript:</span> <span class="text-gray-400">Focuses on a clear separation between type-level constructs (PascalCase) and runtime values (camelCase), enforced by powerful tooling.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-gray-800 p-4 sm:p-6 md:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold text-white text-center mb-6">Convention Quick Reference</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    <th class="p-4 font-semibold">Construct</th>
+                                    <th class="p-4 font-semibold text-cyan-300">Go</th>
+                                    <th class="p-4 font-semibold text-green-300">PHP (PSR-12)</th>
+                                    <th class="p-4 font-semibold text-yellow-300">TypeScript</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-700">
+                                <tr class="hover:bg-gray-700/50">
+                                    <td class="p-4 font-bold">Constants</td>
+                                    <td class="p-4 font-mono">PascalCase/camelCase</td>
+                                    <td class="p-4 font-mono">CONSTANT_CASE</td>
+                                    <td class="p-4 font-mono">CONSTANT_CASE</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/50">
+                                    <td class="p-4 font-bold">Functions</td>
+                                    <td class="p-4 font-mono">PascalCase/camelCase</td>
+                                    <td class="p-4 font-mono">camelCase</td>
+                                    <td class="p-4 font-mono">camelCase</td>
+                                </tr>
+                                <tr class="hover:bg-gray-700/50">
+                                    <td class="p-4 font-bold">Interfaces</td>
+                                    <td class="p-4 font-mono">PascalCase (e.g. Reader)</td>
+                                    <td class="p-4 font-mono">PascalCase+Interface</td>
+                                    <td class="p-4 font-mono">PascalCase</td>
+                                </tr>
+                                 <tr class="hover:bg-gray-700/50">
+                                    <td class="p-4 font-bold">Private Members</td>
+                                    <td class="p-4 font-mono">camelCase (unexported)</td>
+                                    <td class="p-4 font-mono">camelCase + `private`</td>
+                                    <td class="p-4 font-mono">camelCase + `private`</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="react" class="my-16 md:my-24">
+                <h2 class="text-3xl font-bold text-white text-center mb-4">Spotlight on React: Props vs. Handlers</h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-12">React conventions create a clear data flow. A critical pattern is the distinction between props passed down (`on...`) and handlers defined within a component (`handle...`).</p>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
+                        <div class="flex flex-col items-center">
+                            <h3 class="text-xl font-bold text-cyan-300 mb-2">Parent Component</h3>
+                            <div class="bg-gray-900 p-4 rounded-lg w-full">
+                                <p class="font-mono text-sm text-left">
+                                    <span class="text-pink-400">const</span> <span class="text-yellow-300">handleNameChange</span> = () => { ... };<br><br>
+                                    <span class="text-gray-500">// The handler implements the logic</span><br>
+                                    return &lt;<span class="text-green-300">Input</span> <span class="text-cyan-300">onChange</span>={<span class="text-yellow-300">handleNameChange</span>} /&gt;;<br>
+                                    <span class="text-gray-500">// It's passed to an 'on' prop</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow hidden md:block">→</div>
+                        <div class="flow-arrow md:hidden transform rotate-90 mx-auto">↓</div>
+                        <div class="flex flex-col items-center">
+                             <h3 class="text-xl font-bold text-green-300 mb-2">Child Component's API</h3>
+                             <p class="text-gray-400">The `on` prefix defines the public API for events the child can emit.</p>
+                             <div class="font-mono mt-4 text-sm bg-gray-900 p-4 rounded-lg">
+                                 props: { <span class="text-cyan-300">onChange</span>: <span class="text-yellow-300">Function</span> }
+                             </div>
+                        </div>
+                        <div>
+                             <h3 class="text-xl font-bold text-yellow-300 mb-2">The "Why"</h3>
+                             <p class="text-gray-400 text-center md:text-left">This separation makes component interaction predictable. <br><b class="text-white">`handle...`</b> = "What to do" (Implementation). <br><b class="text-white">`on...`</b> = "What happened" (API/Event). </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="enforcement" class="my-16 md:my-24">
+                <h2 class="text-3xl font-bold text-white text-center mb-4">Making It Stick: Automated Enforcement</h2>
+                <p class="text-lg text-gray-400 text-center max-w-3xl mx-auto mb-12">A style guide is only effective if it's followed. We use standard tooling to automate checks and formatting, making compliance the path of least resistance.</p>
+                <div class="relative w-full overflow-hidden bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0 md:space-x-8">
+                        <div class="text-center z-10">
+                            <div class="bg-cyan-500 text-gray-900 rounded-full w-24 h-24 flex items-center justify-center mx-auto text-4xl font-black">1</div>
+                            <h3 class="mt-4 text-xl font-bold">IDE & Editor</h3>
+                            <p class="text-gray-400">Real-time feedback<br>via ESLint/Prettier plugins.</p>
+                        </div>
+                        <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gray-700"></div>
+                        <div class="md:hidden absolute left-1/2 top-0 w-1 h-full bg-gray-700"></div>
+                        <div class="text-center z-10">
+                            <div class="bg-green-500 text-gray-900 rounded-full w-24 h-24 flex items-center justify-center mx-auto text-4xl font-black">2</div>
+                            <h3 class="mt-4 text-xl font-bold">Pre-Commit Hook</h3>
+                             <p class="text-gray-400">Auto-format & lint<br>before code is committed.</p>
+                        </div>
+                        <div class="text-center z-10">
+                             <div class="bg-yellow-500 text-gray-900 rounded-full w-24 h-24 flex items-center justify-center mx-auto text-4xl font-black">3</div>
+                            <h3 class="mt-4 text-xl font-bold">CI Pipeline</h3>
+                             <p class="text-gray-400">Final validation gate<br>to protect the main branch.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="text-center mt-16 md:mt-24 py-8 border-t border-gray-800">
+            <p class="text-gray-500">This is a living document, designed to evolve with our team and technology.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const FONT_COLOR = '#E5E7EB'; 
+        const GRID_COLOR = 'rgba(229, 231, 235, 0.2)';
+
+        const PALETTE = {
+            blue: '#004FFF',
+            cyan: '#00F4E8',
+            green: '#00FF7F',
+            yellow: '#FFC700',
+            pink: '#FF007F'
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+              return label.join(' ');
+            }
+            return label;
+        };
+        
+        const SHARED_CHART_OPTIONS = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            }
+        };
+
+        function createDecorativeDonut(canvasId, color) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: [''],
+                    datasets: [{
+                        label: '',
+                        data: [100],
+                        backgroundColor: [color],
+                        borderColor: 'transparent',
+                        borderWidth: 0
+                    }]
+                },
+                options: { ...SHARED_CHART_OPTIONS }
+            });
+        }
+        
+        createDecorativeDonut('isChart', PALETTE.cyan);
+        createDecorativeDonut('hasChart', PALETTE.green);
+        createDecorativeDonut('shouldChart', PALETTE.yellow);
+        createDecorativeDonut('canChart', PALETTE.pink);
+
+        const radarCtx = document.getElementById('languageRadarChart').getContext('2d');
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Simplicity', 'Strictness', 'Tooling', 'Verbosity', 'Flexibility'],
+                datasets: [{
+                    label: 'Go',
+                    data: [9, 6, 8, 4, 5],
+                    backgroundColor: 'rgba(0, 79, 255, 0.2)',
+                    borderColor: PALETTE.blue,
+                    pointBackgroundColor: PALETTE.blue,
+                }, {
+                    label: 'PHP (PSR)',
+                    data: [5, 8, 7, 9, 6],
+                    backgroundColor: 'rgba(0, 255, 127, 0.2)',
+                    borderColor: PALETTE.green,
+                    pointBackgroundColor: PALETTE.green,
+                }, {
+                    label: 'TypeScript',
+                    data: [6, 9, 9, 7, 8],
+                    backgroundColor: 'rgba(255, 199, 0, 0.2)',
+                    borderColor: PALETTE.yellow,
+                    pointBackgroundColor: PALETTE.yellow,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            color: FONT_COLOR,
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                         callbacks: {
+                            title: tooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: GRID_COLOR },
+                        grid: { color: GRID_COLOR },
+                        pointLabels: { 
+                            color: FONT_COLOR,
+                            font: {
+                                size: 12
+                            }
+                        },
+                        ticks: {
+                            color: FONT_COLOR,
+                            backdropColor: 'rgba(0,0,0,0)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
